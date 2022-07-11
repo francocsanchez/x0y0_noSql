@@ -8,7 +8,8 @@ const app = express(); // Inicio del servidor
 app.use(cors());
 
 // TODO: Main de rutas
-app.use('/users', require('./routes/Users'));
+const { usersRoutes } = require('./routes/Index');
+app.use('/users', usersRoutes);
 
 app.listen(process.env.APP_PORT || 3000, () => {
     console.log('*** Server running ***');
